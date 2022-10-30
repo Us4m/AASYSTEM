@@ -1,0 +1,87 @@
+
+
+{% extends "AAS/draft.html" %}
+{% block body %}
+
+
+
+    <div class="container mt-3">
+        <div class="row">
+            <section class="section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header">
+                                    <h2 class="fw-bold">Edit Product</h2>
+                                </div>
+                                <div class="card-body">
+                                    <form action="" method="POST" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Full Name</label>
+                                            <input type="text" Required name="name" value="{{ prod.name }}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Father Name</label>
+                                            <input type="text" Required name="father_name" value="{{ prod.father_name }}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="" class="form-label">DOB</label>
+                                          <input type="text" Required name="dob" value="{{ prod.dob }}" class="form-control">
+                                      </div> 
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Regestration #</label>
+                                            <input type="text" Required name="reg" value="{{ prod.Reg }}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="" class="form-label">Gender</label>
+                                            <input type="text" Required name="gender" value="{{ prod.gender }}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="" class="form-label">Phone Number</label>
+                                            <input type="text" Required name="ph" value="{{ prod.ph }}" class="form-control">
+                                              </div>
+                                                <div class="mb-3">
+                                                  <label for="" class="form-label">Email</label>
+                                                  <input type="text" Required name="email" value="{{ prod.email }}" class="form-control">
+                                              </div>
+                                              <div class="mb-3">
+                                                <label for="" class="form-label">CNIC#</label>
+                                                <input type="text" Required name="cnic" value="{{ prod.cnic }}" class="form-control">
+                                            </div>
+                                            <div class="mb-3">
+                                              <label for="" class="form-label">Nationality</label>
+                                              <input type="text" Required name="nationality" value="{{ prod.nationality }}" class="form-control">
+                                          </div>
+                                          <div class="mb-3">
+                                            <label for="" class="form-label">Material Status</label>
+                                            <input type="text" Required name="status" value="{{ prod.status }}" class="form-control">
+                                        </div>
+                                        <div class="mb-3">
+                                          <label for="" class="form-label">Blood Group</label>
+                                          <input type="text" Required name="bgroup" value="{{ prod.bgroup }}" class="form-control">
+                                      </div>
+                                      <div class="mb-3">
+                                        <label for="" class="form-label">Address</label>
+                                        <input type="text" Required name="address" value="{{ prod.address }}" class="form-control">
+                                    </div> 
+                                         <div class="mb-3">
+                                            {% if prod.image %}
+                                                <img src="{{ prod.image.url }}" alt="image here" height="50px" class="prod-size">
+                                            {% endif %}
+                                            <label for="" class="form-label">Image</label>
+                                            <input type="file" name="image" class="form-control mt-2">
+                                        </div>
+                                        <button type="submit" class="btn btn-warning">Update</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    {% endblock body %}
+           
