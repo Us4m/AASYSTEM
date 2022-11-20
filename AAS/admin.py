@@ -2,6 +2,7 @@
 from django.contrib import admin
 from .models import Student
 from .models import Course
+from .models import Contactus
 from .models import AttendanceImage
 
 
@@ -10,6 +11,7 @@ from .models import AttendanceImage
 # Register your models here.
 admin.site.register(Student)
 admin.site.register(Course)
+admin.site.register(Contactus)
 
 admin.site.register(AttendanceImage)
 class ImageAdmin(admin.ModelAdmin):

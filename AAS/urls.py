@@ -18,6 +18,8 @@ urlpatterns = [
     path('searchc', views.searchc, name='searchc'),
     path('searchm', views.searchm, name='searchm'),
     path('searcha', views.searcha, name='searcha'),
+    path('contactus', views.contactus, name='contactus'),
+    # path('sendmail', views.sendmail, name='sendmail'),
 
 
     path('students', views.students, name="students"),

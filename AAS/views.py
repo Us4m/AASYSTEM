@@ -16,6 +16,10 @@ from django.contrib import messages
 from django.contrib import messages
 from pathlib import Path
 from django.contrib.auth.decorators import login_required
+from AAS.models import Contactus
+from AAS.models import Course
+from AAS.models import AttendanceImage
+
 
 import os
 import pandas as pd
@@ -31,7 +35,36 @@ current_time = datetime.now().strftime('%I:%M %p')
 
 
 # Create your views here.
+def contactus(request):
+        if request.method == "POST":
 
+            name = request.POST.get('name')
+            email = request.POST.get('email')
+            utype = request.POST.get('utype')
+            message = request.POST.get('message')
+            contactus =Contactus( name= name, email= email, utype=utype,  message=message, date=datetime.today() )
+            contactus.save()
+            messages.success(request, 'Message sent sucessfully our team get in touch soon.')
+            return render(request, 'AAS/index.html')
+        else:
+            return render(request, 'AAS/contactus.html')
+
+# def sendmail(request):
+#      if request.method == "POST":
+        
+#         name = request.POST['name']
+#         email = request.POST['email']
+#         utype = request.POST['utype']
+#         message = request.POST['message']
+
+#         send_mail(
+#             name,
+#             message,
+#             'sp19-bcs-040@cuiwah.edu.pk',
+#             ['us4m4.27@gmail.com'],
+#             fail_silently=False,
+#             )   
+#         return render(request, 'AAS/contactus.html')
 
 def landingpage(request):
 
@@ -42,7 +75,7 @@ def dashboard(request):
 
 
 def attn(request):
-
+    
     return render(request, 'AAS/attendance.html' , {'date': g ,'time': current_time})
 
 def login(request):
@@ -153,6 +186,7 @@ def searcha(request):
 # ================ Attendance page and ML Model depolyment  =================== 
 @login_required(login_url='login')
 def Attendance(request):
+
     
 
     from fileinput import filename
@@ -374,7 +408,7 @@ def add_student(request):
             prod.image = request.FILES['image']
 
         prod.save()
-        messages.success(request, "Product Added Successfully")
+        messages.success(request, "Student Added Successfully")
         return redirect('/students')
     return render(request, 'AAS/students/add_student.html',{'date': g ,'time': current_time})
 
@@ -403,7 +437,7 @@ def editProduct(request, pk):
         prod.bgroup = request.POST.get('bgroup')
         prod.address = request.POST.get('address')
         prod.save()
-        messages.success(request, "Product Updated Successfully")
+        messages.success(request, "Student Updated Successfully")
         return redirect('/students')
 
     context = {'prod':prod
@@ -418,7 +452,7 @@ def deleteProduct(request, pk):
     if len(prod.image) > 0:
         os.remove(prod.image.path)
     prod.delete()
-    messages.success(request,"Product Deleted Successfuly")
+    messages.success(request,"Student Deleted Successfuly")
     return redirect('/students')  
 
 
