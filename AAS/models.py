@@ -40,3 +40,14 @@ class AttendanceImage(models.Model):
 
     photo = models.ImageField(upload_to="ImagesAttendance")
     date = models.DateTimeField(auto_now_add=True,null=True)
+
+class Contactus(models.Model):
+    name = models.CharField(max_length=120)
+    email = models.CharField(max_length=120)
+    utype = models.CharField(max_length=120)
+    message = models.CharField(max_length=520)
+    
+    date = models.DateField()
+
+    def __str__(self) :
+        return self.name
