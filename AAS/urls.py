@@ -19,7 +19,13 @@ urlpatterns = [
     path('searchm', views.searchm, name='searchm'),
     path('searcha', views.searcha, name='searcha'),
     path('contactus', views.contactus, name='contactus'),
-    # path('sendmail', views.sendmail, name='sendmail'),
+    # path('indexe', views.indexe, name='indexe'),
+
+    path('add', views.addTodo, name='add'),
+    path('complete/<todo_id>', views.completeTodo, name='complete'),
+    path('deletecomplete', views.deleteCompleted, name='deletecomplete'),
+    path('deleteall', views.deleteAll, name='deleteall'),
+
 
 
     path('students', views.students, name="students"),

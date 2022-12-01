@@ -7,6 +7,13 @@ from django.db import models
 import datetime
 import os
 
+class Todo(models.Model):
+    text = models.CharField(max_length=40)
+    complete = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.text
+
 def filepath(request, filename):
     old_filename = filename
     timeNow = datetime.datetime.now().strftime('%Y%m%d%H:%M:%S')

@@ -458,13 +458,14 @@
             margin-left: 20px;
             margin-right: 20px;
             background-color: #FFFFFF;
-            box-shadow: 0px 0px 17px 2px rgba(218, 218, 218, 0.212);            }
+            box-shadow: 0px 0px 17px 2px rgba(218, 218, 218, 0.212);    
+                }
             .lsecii:hover{
             box-shadow: 0px 0px 32px -2px rgba(4, 238, 255, 0.137);
             }
 
             .ritsec{
-            /* border: 2px solid black; */
+            /* border: 2px solid black;  */
             display: flex;
             flex-direction: column;
             background-color: #FFFFFF;
@@ -472,11 +473,29 @@
             width: 370px;
             height: 550px;
             margin: 30px;
+            overflow-y: scroll; /* Add the ability to scroll */
+
             box-shadow: 0px 0px 17px 2px rgba(218, 218, 218, 0.212);
             }
             .ritsec:hover{
             box-shadow: 0px 0px 32px -2px rgba(0, 238, 255, 0.041);
             }
+
+            
+        .ritsec::-webkit-scrollbar {
+            width: 10px;
+        }
+        .ritsec::-webkit-scrollbar-track {
+          background: #f1f1f1;
+          margin: 50px;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .ritsec::-webkit-scrollbar-thumb  {
+          box-shadow: 0px 0px 32px -2px rgba(0, 0, 0, 0.25);        }
+        .headng{
+          width: 100px;
+          
+        }
 
             .rseci{
             /* border: 2px solid black; */
