@@ -964,20 +964,20 @@
 
                   <a href="{% url 't_clas' request.user.teacher.id 1 %}">
                       <div class="icco"> 
-                          <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/clsrm.svg"> </div>
+                          <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/editico.svg"> </div>
                           <div class="icttl">Moniter Attendance</div>
                           </div>
                       
                     </a>
                     <a href="{% url 't_clas' request.user.teacher.id 2 %}">
                       <div class="icco"> 
-                          <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/clsrm.svg"> </div>
+                          <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/adstu.svg"> </div>
                           <div class="icttl">Moniter Marks</div>
                           </div>
                     </a>
                     <a href="{% url 't_timetable' request.user.teacher.id %}">
                       <div class="icco"> 
-                      <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/clsrm.svg"> </div>
+                      <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/ttbl.png"> </div>
                       <div class="icttl">Moniter TimeTable</div>
                       </div>                         
                    </a>
@@ -988,11 +988,10 @@
                       </div> 
                   </a> 
                  </div>
-                <div class="dwic">
-                    <div class="ttlh">Having trouble? </div>
-                    <a style="text-decoration:none ;" href="/contactus"> <div class="cntus"><span>Contact Us</span> </div></a>
-                  </div>
+                 <div style=" margin-top: -20px; background-color: transparent   " class="dwic"  >
+                  <a style="text-decoration:none  ; background-color: #005266;" href="/contactus"> <div style="background-color: #013845;" class="cntus"><span>Contact Us</span> </div></a>
                 </div>
+               </div>
 
 
             </div>
@@ -1020,7 +1019,7 @@
                         <th style="width: 25%">Student Reg</th>
                         <th style="width: 25%">Student Name</th>
                         <th style="width: 25%">Attendance</th>
-                        <th style="width: 25%">CIE</th>
+                        <th style="width: 25%">Marks Percentage</th>
                   </thead>
                   <tbody>
                     {% for sc in sc_list %}
@@ -1028,14 +1027,14 @@
                         <td>{{ sc.student_id }}</td>
                         <td>{{ sc.student.name }}</td>
                         {% if sc.get_attendance < 75 %}
-                            <td style="color: red;font-weight: 600;" >{{ sc.get_attendance }}</td>
+                            <td style="color: red;font-weight: 600;" >{{ sc.get_attendance }}%</td>
                         {% else %}
-                            <td style="color: rgb(0, 255, 0);font-weight: 600;">{{ sc.get_attendance }}</td>
+                            <td style="color: rgb(0, 255, 0);font-weight: 600;">{{ sc.get_attendance }}%</td>
                         {% endif %}
                         {% if sc.get_cie < 25 %}
-                            <td  style="color: red; font-weight: 600; ">{{ sc.get_cie }}</td>
+                            <td  style="color: red; font-weight: 600; ">{{ sc.get_cie }}%</td>
                         {% else %}
-                            <td style="color: rgb(0, 255, 0); font-weight: 600;">{{ sc.get_cie }}</td>
+                            <td style="color: rgb(0, 255, 0); font-weight: 600;">{{ sc.get_cie }}%</td>
                         {% endif %}
                     </tr>
                     {% empty %}

@@ -1095,44 +1095,69 @@
                 <div class="navico"> 
                 <div class="upici">
 
-                        <a href="/index" style="color:white;text-decoration:none;">
+                    <a href="/index" style="color:white;text-decoration:none;">
+                        <div class="icco"> 
+                        <div class="icim"><img style="width: 26px; height:26px; "  src="/ImagesAttendance/info/images/House_02.svg"> </div>
+                        <div class="icttl"> Dashboard</div>
+                        </div>
+                      </a>
+                       {% comment %} <a href="/students" style="color:white;text-decoration:none;">
+                        <div class="icco"> 
+                        <div class="icim">&nbsp;<img style="width: 26px; height:26px; "  src="/ImagesAttendance/info/images/adstu.svg"> </div>
+                        <div class="icttl" style="margin-left: -5px;">Manage Student</div>
+                        </div>
+                      </a>  {% endcomment %}
+                      <a href="/present_student" style="color:white;text-decoration:none;">
+                        <div class="icco"> 
+                        <div class="icim">&nbsp;<img style="width: 26px; height:25px; margin-left: -5px;"  src="/ImagesAttendance/info/images/prstu.svg"> </div>
+                        <div class="icttl">Present Student </div>
+                        </div>
+                      </a>
+                      <a href="/TakeAttendance" style="color:white;text-decoration:none;">
+                        <div class="icco"> 
+                        <div class="icim">&nbsp;<img style="width: 23px; height:23px; margin-left: -3px; "  src="/ImagesAttendance/info/images/tkatn.svg"> </div>
+                        <div class="icttl">Take Attendance </div>
+                        </div>
+                      </a>
+                      <a href="/class_room" style="color:white;text-decoration:none;">
+                        <div class="icco"> 
+                        <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/clsrm.svg"> </div>
+                        <div class="icttl">Classroom</div>
+                        </div>
+                      </a>
+
+                      <a href="{% url 't_clas' request.user.teacher.id 1 %}">
                           <div class="icco"> 
-                          <div class="icim"><img style="width: 26px; height:26px; "  src="/ImagesAttendance/info/images/House_02.svg"> </div>
-                          <div class="icttl"> Dashboard</div>
-                          </div>
+                              <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/editico.svg"> </div>
+                              <div class="icttl">Moniter Attendance</div>
+                              </div>
+                          
                         </a>
-                         <a href="/students" style="color:white;text-decoration:none;">
+                        <a href="{% url 't_clas' request.user.teacher.id 2 %}">
                           <div class="icco"> 
-                          <div class="icim">&nbsp;<img style="width: 26px; height:26px; "  src="/ImagesAttendance/info/images/adstu.svg"> </div>
-                          <div class="icttl" style="margin-left: -5px;">Manage Student</div>
-                          </div>
-                        </a> 
-                        <a href="/present_student" style="color:white;text-decoration:none;">
-                          <div class="icco"> 
-                          <div class="icim">&nbsp;<img style="width: 26px; height:25px; margin-left: -5px;"  src="/ImagesAttendance/info/images/prstu.svg"> </div>
-                          <div class="icttl">Present Student </div>
-                          </div>
+                              <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/adstu.svg"> </div>
+                              <div class="icttl">Moniter Marks</div>
+                              </div>
                         </a>
-                        <a href="/TakeAttendance" style="color:white;text-decoration:none;">
+                        <a href="{% url 't_timetable' request.user.teacher.id %}">
                           <div class="icco"> 
-                          <div class="icim">&nbsp;<img style="width: 23px; height:23px; margin-left: -3px; "  src="/ImagesAttendance/info/images/tkatn.svg"> </div>
-                          <div class="icttl">Take Attendance </div>
-                          </div>
-                        </a>
-                        <a href="/class_room" style="color:white;text-decoration:none;">
+                          <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/ttbl.png"> </div>
+                          <div class="icttl">Moniter TimeTable</div>
+                          </div>                         
+                       </a>
+                       <a href="{% url 't_clas' request.user.teacher.id 3 %}">
                           <div class="icco"> 
                           <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/clsrm.svg"> </div>
-                          <div class="icttl">Classroom</div>
-                          </div>
-                        </a>
-
+                          <div class="icttl">Moniter Report</div>
+                          </div> 
+                      </a>
                        
                  </div>
-                <div class="dwic">
-                    <div class="ttlh">Having trouble? </div>
-                   <a style="text-decoration:none ;" href="/contactus"> <div class="cntus"><span>Contact Us</span> </div></a>
+                 <div style=" margin-top: -20px; background-color: transparent   " class="dwic"  >
+                    <a style="text-decoration:none  ; background-color: #005266;" href="/contactus"> <div style="background-color: #013845;" class="cntus"><span>Contact Us</span> </div></a>
+                  </div>
                  </div>
-                </div>
+ 
 
 
             </div>

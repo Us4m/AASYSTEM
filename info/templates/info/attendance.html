@@ -921,7 +921,7 @@
                     {{request.user.first_name}}  {{request.user.last_name}}
                     </div>
                     <div class="btnttl">
-                      <a style="text-decoration:none ;" href="/viewprofile"><div  class="vp"> View Profile</div></a> 
+                      <a style="text-decoration:none ;" href="/Profile_View"><div  class="vp"> View Profile</div></a> 
                     
                     </div>
                     <div class="lgout" style="margin-left: 135px; margin-top: 0px; "><a href="{% url 'logout'%}"><img style=" width: 30px; height:50px;" src="/ImagesAttendance/info/images/lgout.svg" alt=""> </a></div>
@@ -964,7 +964,7 @@
 
                   <a href="{% url 'attendance' request.user.student.USN %}">
                       <div class="icco"> 
-                          <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/clsrm.svg"> </div>
+                          <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/editico.svg"> </div>
                           <div class="icttl">Moniter Attendance</div>
                           </div>
                       
@@ -977,7 +977,7 @@
                     </a>
                     <a href="{% url 'timetable' request.user.student.class_id_id %}">
                       <div class="icco"> 
-                      <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/clsrm.svg"> </div>
+                      <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/ttbl.png"> </div>
                       <div class="icttl">Moniter TimeTable</div>
                       </div>                         
                    </a>
@@ -1028,9 +1028,9 @@
                         <td>{{ a.att_class }}</td>
                         <td>{{ a.total_class }}</td>
                         {% if a.attendance < 75 %}
-                            <td > <span style="color: #686868; text-decoration: none; border: 2px solid #ff05058a; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; box-shadow: 7px 13px 42px 11px rgba(255, 0, 0, 0.144); padding: 10px; border-radius: 20px; padding-left: 20px; padding-right: 20px; " >{{ a.attendance }}</span> </td>
+                            <td > <span style="color: #686868; text-decoration: none; border: 2px solid #ff05058a; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; box-shadow: 7px 13px 42px 11px rgba(255, 0, 0, 0.144); padding: 10px; border-radius: 20px; padding-left: 20px; padding-right: 20px; " >{{ a.attendance }}%</span> </td>
                         {% else %}
-                            <td ><span style="color: #686868; text-decoration: none; border: 2px solid #01c0c78a; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; box-shadow: 7px 13px 42px 11px rgba(0, 140, 255, 0.144); padding: 10px; border-radius: 20px; padding-left: 20px; padding-right: 20px; " >{{ a.attendance }}</span></td>
+                            <td ><span style="color: #686868; text-decoration: none; border: 2px solid #01c0c78a; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; box-shadow: 7px 13px 42px 11px rgba(0, 140, 255, 0.144); padding: 10px; border-radius: 20px; padding-left: 20px; padding-right: 20px; " >{{ a.attendance }}%</span></td>
                         {% endif %}
                         <td>{{ a.classes_to_attend }}</td>
                     </tr>

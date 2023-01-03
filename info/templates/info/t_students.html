@@ -964,20 +964,20 @@
 
                   <a href="{% url 't_clas' request.user.teacher.id 1 %}">
                       <div class="icco"> 
-                          <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/clsrm.svg"> </div>
+                          <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/editico.svg"> </div>
                           <div class="icttl">Moniter Attendance</div>
                           </div>
                       
                     </a>
                     <a href="{% url 't_clas' request.user.teacher.id 2 %}">
                       <div class="icco"> 
-                          <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/clsrm.svg"> </div>
+                          <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/adstu.svg"> </div>
                           <div class="icttl">Moniter Marks</div>
                           </div>
                     </a>
                     <a href="{% url 't_timetable' request.user.teacher.id %}">
                       <div class="icco"> 
-                      <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/clsrm.svg"> </div>
+                      <div class="icim">&nbsp;<img style="width: 28px; height:28px; margin-left: -5px;"  src="/ImagesAttendance/info/images/ttbl.png"> </div>
                       <div class="icttl">Moniter TimeTable</div>
                       </div>                         
                    </a>
@@ -988,11 +988,10 @@
                       </div> 
                   </a>
                  </div>
-                <div class="dwic">
-                    <div class="ttlh">Having trouble? </div>
-                    <a style="text-decoration:none ;" href="/contactus"> <div class="cntus"><span>Contact Us</span> </div></a>
-                  </div>
+                 <div style=" margin-top: -20px; background-color: transparent   " class="dwic"  >
+                  <a style="text-decoration:none  ; background-color: #005266;" href="/contactus"> <div style="background-color: #013845;" class="cntus"><span>Contact Us</span> </div></a>
                 </div>
+               </div>
 
 
             </div>
@@ -1035,9 +1034,9 @@
                         <td>{{ a.att_class }}</td>
                         <td>{{ a.total_class }}</td>
                         {% if a.attendance < 75 %}
-                            <td ><span style="background-color: rgb(252, 22, 6); border-radius: 20px; color: white; padding: 10px;">{{ a.attendance }}</span></td>
+                            <td ><span style="background-color: rgb(252, 22, 6); border-radius: 20px; color: white; padding: 10px;">{{ a.attendance }}%</span></td>
                         {% else %}
-                            <td ><span style="background-color: rgb(70, 221, 0); border-radius: 20px; color: white; padding: 10px;">{{ a.attendance }}</span></td>
+                            <td ><span style="background-color: rgb(70, 221, 0); border-radius: 20px; color: white; padding: 10px;">{{ a.attendance }}%</span></td>
                         {% endif %}
                         <td>{{ a.classes_to_attend }}</td>
                     </tr>

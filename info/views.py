@@ -22,6 +22,12 @@ def landingpage(request):
 
     return render(request, 'info/homee.html')
 
+@login_required
+def stuv(request):
+
+    return render(request, 'info/view.html',{
+        'date': g, 'time': current_time})
+
 
 
 
@@ -176,7 +182,7 @@ def attendance(request, stud_id):
             a = AttendanceTotal(student=stud, course=ass.course)
             a.save()
         att_list.append(a)
-    return render(request, 'info/attendance.html', {'att_list': att_list})
+    return render(request, 'info/attendance.html', {'att_list': att_list,'date': g, 'time': current_time})
 
 
 @login_required()
@@ -184,7 +190,7 @@ def attendance_detail(request, stud_id, course_id):
     stud = get_object_or_404(Student, USN=stud_id)
     cr = get_object_or_404(Course, id=course_id)
     att_list = Attendance.objects.filter(course=cr, student=stud).order_by('date')
-    return render(request, 'info/att_detail.html', {'att_list': att_list, 'cr': cr})
+    return render(request, 'info/att_detail.html', {'att_list': att_list, 'cr': cr ,'date': g, 'time': current_time})
 
 
 # Teacher Views
@@ -209,7 +215,7 @@ def class_room(request):
 
     mylist = zip(classNames, myList)
     context = {
-                'mylist': mylist,
+                'mylist': mylist,'date': g, 'time': current_time
             }
 
     return render(request, 'info/class_room.html', context )
@@ -441,12 +447,12 @@ def marks_list(request, stud_id):
         except StudentCourse.DoesNotExist:
             sc = StudentCourse(student=stud, course=ass.course)
             sc.save()
-            sc.marks_set.create(type='I', name='Internal test 1')
-            sc.marks_set.create(type='I', name='Internal test 2')
-            sc.marks_set.create(type='I', name='Internal test 3')
-            sc.marks_set.create(type='E', name='Event 1')
-            sc.marks_set.create(type='E', name='Event 2')
-            sc.marks_set.create(type='S', name='Semester End Exam')
+            sc.marks_set.create(type='I', name='Quiz 1')
+            sc.marks_set.create(type='I', name='Assignment 1')
+            sc.marks_set.create(type='I', name='Quiz 2')
+            sc.marks_set.create(type='E', name='Assignment 2')
+            sc.marks_set.create(type='E', name='Mid Term')
+            sc.marks_set.create(type='S', name='Terminal')
         sc_list.append(sc)
 
     return render(request, 'info/marks_list.html', {'sc_list': sc_list ,'date': g, 'time': current_time})
