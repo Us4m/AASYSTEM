@@ -7,12 +7,13 @@ from django.urls import path
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 
-from .models import Dept, Class, Student, Attendance, AttendanceImage, Course, Teacher, Assign, AssignTime, AttendanceClass
+from .models import Dept, Class, Student,Contactus, Attendance, AttendanceImage, Course, Teacher, Assign, AssignTime, AttendanceClass
 from .models import StudentCourse, Marks, User, AttendanceRange
 
 # from .models import Account
  
 from .models import Todo
+
 
 
 # class AccountInline(admin.StackedInline):
@@ -28,6 +29,7 @@ from .models import Todo
 # admin.site.register(User, CustomizedUserAdmin )
 
 admin.site.register(Todo) 
+admin.site.register(Contactus) 
 admin.site.register(AttendanceImage) 
 
 # Register your models here.

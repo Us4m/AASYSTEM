@@ -588,7 +588,6 @@ def Attendancee(request):
                 dtStrings = today.strftime("%b-%d-%Y")
                 f.writelines(f'\n{name},{dtString},{dtStrings}')
                 ## Saving data to database
-                Attendance.objects.create(name=name, date=dtStrings, time=dtString)
 
     encodeListKnown = findEncodings(images)
     print(len(encodeListKnown))

@@ -91,7 +91,7 @@ class Class(models.Model):
 
 def filepath(request, filename):
     old_filename = filename
-    return os.path.join('info/images/', filename)
+    return os.path.join('info/images', filename)
     
 class Student(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)

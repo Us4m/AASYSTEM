@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'CollegeERP.urls'
+ROOT_URLCONF = 'AASystem.urls'
 
 TEMPLATES = [
     {
@@ -76,7 +76,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'CollegeERP.wsgi.application'
+WSGI_APPLICATION = 'AASystem.wsgi.application'
 
 
 # Database
