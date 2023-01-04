@@ -1036,9 +1036,9 @@
                             <td>{{ a.date }}</td>
                             <td>{{ a.date|date:"l" }}</td>
                             {% if a.status %}
-                            <td class="p-3 mb-2 bg-success text-white">Present <span class="glyphicon glyphicon-thumbs-up"></span></td>
+                            <td style="color: #00999e;" >Present <span ></span></td>
                             {% else %}
-                            <td class="p-3 mb-2 bg-danger text-white">Absent <span class="glyphicon glyphicon-thumbs-down"></span</td>
+                            <td style="color: red;" >Absent <span class=></span</td>
                             {% endif %}
                         </tr>
                     {% empty %}
